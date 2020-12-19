@@ -1,10 +1,10 @@
-name: Shell Commands
+name: Auto PR
 
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ development ]
+    branches: [ development ]  ## need to wildcard deployment
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -15,8 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: main
+          ref: development  #Working base is branch 'development'
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          branch: development
+          branch: main  #Pull request branch to create or update set to 'main'
