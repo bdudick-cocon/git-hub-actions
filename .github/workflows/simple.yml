@@ -20,3 +20,5 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           branch: main  #Pull request branch to create or update set to 'main'
+          assignees: bdudick-cocon
+          reviewers: bdudick-cocon
